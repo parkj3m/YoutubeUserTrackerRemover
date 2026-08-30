@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            body {
+                font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+                width: 260px;
+                padding: 12px 14px;
+                margin: 0;
+            }
+
+            h1 {
+                font-size: 13px;
+                font-weight: 600;
+                margin: 0 0 12px;
+            }
+
+            label {
+                display: flex;
+                align-items: flex-start;
+                gap: 8px;
+                font-size: 13px;
+                margin-bottom: 4px;
+                cursor: pointer;
+            }
+
+            input[type="checkbox"] {
+                margin-top: 2px;
+            }
+
+            .row {
+                margin-bottom: 12px;
+            }
+
+            .desc {
+                font-size: 11px;
+                color: #666;
+                margin: 2px 0 0 22px;
+                line-height: 1.4;
+            }
+
+            .always {
+                font-size: 11px;
+                color: #888;
+                border-top: 1px solid #eee;
+                margin-top: 10px;
+                padding-top: 10px;
+                line-height: 1.5;
+            }
+
+            .always strong {
+                color: #555;
+            }
+
+            button#reloadTab {
+                width: 100%;
+                margin-top: 12px;
+                padding: 7px 0;
+                font-size: 12px;
+                font-weight: 600;
+                border: 1px solid #ccc;
+                border-radius: 6px;
+                background: #f7f7f7;
+                cursor: pointer;
+            }
+
+            button#reloadTab:hover {
+                background: #eee;
+            }
+
+            button#reloadTab:active {
+                background: #e2e2e2;
+            }
+
+            #reloadStatus {
+                font-size: 11px;
+                color: #888;
+                text-align: center;
+                margin-top: 6px;
+                min-height: 14px;
+            }
+
+            input[type="text"]#prefixText {
+                width: 100%;
+                box-sizing: border-box;
+                margin: 6px 0 0 22px;
+                padding: 5px 7px;
+                font-size: 12px;
+                font-family: inherit;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                width: calc(100% - 22px);
+            }
+
+            input[type="text"]#prefixText:disabled {
+                background: #f3f3f3;
+                color: #999;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>YouTube Share Link Cleaner</h1>
+
+        <div class="row">
+            <label>
+                <input type="checkbox" id="removeSi">
+                Remove tracking ID ( si )
+            </label>
+            <div class="desc">Identifies who shared the link. Safe to remove - doesn't affect playback.</div>
+        </div>
+
+        <div class="row">
+            <label>
+                <input type="checkbox" id="removeTimestamp">
+                Remove timestamp ( t / start )
+            </label>
+            <div class="desc">Removes the "starts at X seconds" part of the link.</div>
+        </div>
+
+        <div class="row">
+            <label>
+                <input type="checkbox" id="addPrefix">
+                Add prefix
+            </label>
+            <div class="desc">Prepends the text below before the copied link.</div>
+            <input type="text" id="prefixText" placeholder="!!p ">
+        </div>
+
+        <div class="always">
+            <strong>Always removed:</strong> feature, ab_channel, pp, app, source_ve_path, gclid, list, index.
+        </div>
+
+        <button id="reloadTab">Reload current YouTube tab</button>
+        <div id="reloadStatus"></div>
+
+        <script src="popup.js"></script>
+    </body>
+</html>
