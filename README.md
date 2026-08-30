@@ -24,7 +24,7 @@ If the setting does not get applied, the popup also has a 'Reload current YouTub
   
 ## Install
   
-1. Unzip this folder.  
+1. Download project and unzip.  
 2. Open 'chrome://extensions' in Chrome.  
 3. Turn on 'Developer mode'.  
 4. Click 'Load unpacked'.  
