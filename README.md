@@ -1,4 +1,4 @@
-# Youtube User Tracker Remover (YUTR?)  
+# YouTube User Tracker Remover (YUTR)  
   
 Removes the user tracking portion of YouTube links copied via the "Share -> Copy" button, on both 'youtube.com' and 'youtu.be' links.  
   
